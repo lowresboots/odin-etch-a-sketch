@@ -1,8 +1,7 @@
 function createGrid(size) {
     const container = document.getElementById('container');
     container.innerHTML = '';
-    container.style.gridTemplatecolumns = `repeat(${size}, 1fr)`;
-
+    
     const squareSize = 960 / size;
 
     for (let i = 0; i < size * size; i++) {

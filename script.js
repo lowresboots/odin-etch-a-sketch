@@ -11,7 +11,7 @@ function createGrid(size) {
         square.style.height = `${squareSize}px`;
         
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'black';
+            square.style.backgroundColor = getRandomColor();
         });
 
         container.appendChild(square);
@@ -33,5 +33,12 @@ resetButton.addEventListener('click', () => {
         alert('Please enter a number between 1 and 100.');
     }
 });
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+};
 
 createGrid(16);

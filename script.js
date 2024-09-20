@@ -23,6 +23,10 @@ const resetButton = document.getElementById('reset-button');
 resetButton.addEventListener('click', () => {
     let newSize = parseInt(prompt('Enter new grid size (1-100):'), 10);
 
+    if (!input) {
+        return;
+    }
+
     if (newSize && newSize > 0 && newSize <= 100) {
         createGrid(newSize);
     } else {

@@ -16,6 +16,18 @@ function createGrid(size) {
 
         container.appendChild(square);
     }
-}
+};
+
+const resetButton = document.getElementById('reset-button');
+
+resetButton.addEventListener('click', () => {
+    let newSize = parseInt(prompt('Enter new grid size (1-100):'), 10);
+
+    if (newSize && newSize > 0 && newSize <= 100) {
+        createGrid(newSize);
+    } else {
+        alert('Please enter a number between 1 and 100.');
+    }
+});
 
 createGrid(16);
